@@ -1,0 +1,56 @@
+:root {
+    /* Brand Colors - Based on modern tech aesthetic */
+    --primary: #2563eb;    /* Blue */
+    --secondary: #4f46e5;  /* Indigo */
+    --accent: #7c3aed;     /* Purple */
+    --background: #090909; /* Dark background */
+    --card-bg: #111111;    /* Card background */
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+}
+
+/* Remove duplicate glass-card styles and merge them */
+.glass-card {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Remove duplicate team-card styles as they're covered by glass-card */
+
+/* Animations */
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Icon animations */
+.icon-hover {
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover .icon-hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .glass-card:hover {
+        transform: translateY(-2px);
+    }
+} 
